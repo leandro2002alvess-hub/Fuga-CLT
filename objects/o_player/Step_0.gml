@@ -8,9 +8,10 @@ var space = keyboard_check_pressed(vk_space)
 //Criando o sistema de gravidade do nosso jogo
 //nosso vel_v por padrão não possui nenhum tipo de valor ou seja zero
 //Porém ele vai receber o valor da grav ou seja vel_v += a minha grav que equivale a 0.5
+show_debug_message("Minha velocidade vertical e: " + string(vel_v));
 vel_v += grav
 //Criando meu if para ver se estou pulando ou não
-if(space && place_meeting(x, y + 1, o_chao))
+if(vivo == true && space && place_meeting(x, y + 1, o_chao))
 {
     
     sprite_index = s_player_jump
@@ -23,14 +24,53 @@ if(space && place_meeting(x, y + 1, o_chao))
     //que consiste em verificar se estou batendo em algum objeto abaixo de mim
     
 }
+//Criando um novo if para verificar se pisei no chão e mudar a minha animação para sprite de corrida
+//Caso eu esteja pisando no chão e a sprite atual seja s_player_jump
+if(place_meeting(x, y + 1, o_chao) && sprite_index == s_player_jump)
+{
+    //Então devo mudar para sprite de corrida s_player_run
+    //Iremos zerar nosso vel_v tambem
+    sprite_index = s_player_run
+}
 //Apos eu sair do evento de espaço o meu vel_v vai agir com base 
 //na variavel gravidade e vai puxar o eixo Y da room fazendo eu cair
 y += vel_v
-//Criando um novo if para verificar se pisei no chão e mudar a minha animação para sprite de corrida
-//Caso eu esteja pisando no chão e a sprite atual seja s_player_jump
-if(place_meeting(x, y + 1, o_chao) && sprite_index = s_player_jump)
+
+//criando um if para zerarmos nossa vel_v para não ficar crescendo o valor
+//de forma infinita
+//Se meu personagem estiver tocando o chão + 1 pixel dele, então ele vai resetar minha
+//velocidade vertical para zero
+if(place_meeting(x, y + 1, o_chao))
 {
-    //Então devo mudar para sprite de corrida s_player_run
-    sprite_index = s_player_run
+    //Iremos zerar nosso vel_v tambem
+    vel_v = 0
 }
 
+//Criando um sistema de colisão com a caixa
+if(place_meeting(x + 1, y + 1, o_caixa))
+{
+    //Se eu bati na caixo então estou morto
+    //Nesse caso meu vivo vira false
+    //evitando que possa apertar espaço e pular mesmo apos a morte
+    vivo = false
+    vel_v = 0
+    grav = 10
+    //Se eu colidi com a caixa então ele rodará a sprite
+    sprite_index = s_player_dead
+    //Criando um reset da variavel
+    o_caixa.vel_h = 0
+    //Se eu bati na caixa então meu gerador será destruido tambem
+    instance_destroy(o_gerador)
+    //Morri então recomeço minha room
+    //Toda vez que colidir com a caixa ele vai aumentar meu tempo de morte
+    tempo_morte++
+    //se meu tempo de morte ficar maior que o tempo limite de morte
+    if(tempo_morte >= tempo_morte_limite) 
+    {
+        //Então minha room será reiniciada 
+        show_debug_message(tempo_morte)
+        o_controlador.pontos = 0
+        room_restart()
+    }
+        
+}

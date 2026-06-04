@@ -8,4 +8,12 @@ vel_v = 0
 //Por padrão ela será 0.5
 grav = 0.5
 //Criando uma variavel para ser a nossa força do pulo
-pulo = 7
+pulo = 9
+
+//Criando uma variavel para se estou vivo
+vivo = true
+
+//Criando uma variavel de tempo para reiniciar a room apos a morte
+tempo_morte = 0
+//Criando um limite de tempo para minha morte
+tempo_morte_limite = 60

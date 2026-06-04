@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"o_player",
+  "%Name":"o_caixa",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"o_chao","path":"objects/o_chao/o_chao.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_player",
+  "name":"o_caixa",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"Obstaculos",
+    "path":"folders/Objects/Obstaculos.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_player_run",
-    "path":"sprites/s_player_run/s_player_run.yy",
+    "name":"s_caixa",
+    "path":"sprites/s_caixa/s_caixa.yy",
   },
   "spriteMaskId":null,
   "visible":true,
