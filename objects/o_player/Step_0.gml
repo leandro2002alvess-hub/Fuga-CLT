@@ -59,6 +59,16 @@ if(place_meeting(x + 1, y + 1, o_caixa))
     sprite_index = s_player_dead
     //Criando um reset da variavel
     o_caixa.vel_h = 0
+    o_pa.vel_h = 0
+    o_pa_1.vel_h = 0
+    
+    //esse que guarda o nome Background
+    var layer_id = layer_get_id("Background");
+    //Por iremos passar dois parametros dentro do layer_background_speed
+    //que consiste gerir a velocidade do background
+    //primeiro será o layer_id que carrega a variavel layer_id e o segundo parametro e nossa
+    //velocidade que e igual a 0
+    layer_hspeed(layer_id, 0);
     //Se eu bati na caixa então meu gerador será destruido tambem
     instance_destroy(o_gerador)
     //Morri então recomeço minha room
