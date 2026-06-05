@@ -61,7 +61,29 @@ if(place_meeting(x + 1, y + 1, o_caixa))
     o_caixa.vel_h = 0
     o_pa.vel_h = 0
     o_pa_1.vel_h = 0
+    // Proteção para o NPC 2
+    if (instance_exists(o_npc2)) 
+    {
+        o_npc2.vel_h = 0;
+    }
     
+    // Proteção para o NPC 1
+    if (instance_exists(o_npc1)) 
+    {
+        o_npc1.vel_h = 0;
+    }
+    
+    // Proteção para o NPC 3
+    if (instance_exists(o_npc3)) 
+    {
+        o_npc3.vel_h = 0;
+    }
+    
+    // Proteção para o NPC 4
+    if (instance_exists(o_npc4)) 
+    {
+        o_npc4.vel_h = 0;
+    }
     //esse que guarda o nome Background
     var layer_id = layer_get_id("Background");
     //Por iremos passar dois parametros dentro do layer_background_speed

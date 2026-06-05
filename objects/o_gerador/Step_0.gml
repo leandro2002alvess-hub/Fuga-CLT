@@ -25,3 +25,15 @@ if(tempo_detalhes >= tempo_detalhes_limite)
     //Criando um reset para meu tempo
     tempo_detalhes = 0
 }
+
+//Criando NPCs dentro do meu cenario
+tempo_npc += 1
+//Criando um novo if para gerar mais caixas apos um certo periodo
+if(tempo_npc >= tempo_npc_limite)
+{
+    //Criando um sistema aleatorio de mobilias para meu jogo
+    var objeto_sorteado = choose(o_npc1, o_npc2, o_npc3, o_npc4, o_npc2, o_npc3, o_npc4, o_npc1);
+    instance_create_layer(x, y, "i_objeto_npc", objeto_sorteado);
+    //Criando um reset para meu tempo
+    tempo_npc = 0
+}
