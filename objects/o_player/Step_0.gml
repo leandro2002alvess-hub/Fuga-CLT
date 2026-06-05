@@ -13,7 +13,8 @@ vel_v += grav
 //Criando meu if para ver se estou pulando ou não
 if(vivo == true && space && place_meeting(x, y + 1, o_chao))
 {
-    
+    //Toda vez que eu pular então ele rodará o som
+    audio_play_sound(snd_jump, 1, false, 3, 0, 1)
     sprite_index = s_player_jump
     //Ao apertar espaço ou space esse meu vel_v que equilave a 0.5 vai ser igual
     //ao -pulo que se refere a altura que irei pular no negativo indo assim para cima
@@ -42,6 +43,7 @@ y += vel_v
 //velocidade vertical para zero
 if(place_meeting(x, y + 1, o_chao))
 {
+    
     //Iremos zerar nosso vel_v tambem
     vel_v = 0
 }
@@ -105,4 +107,19 @@ if(place_meeting(x + 1, y + 1, o_caixa))
         room_restart()
     }
         
+}
+
+//Criando um if para verificar se posso tocar a musica
+//Se eu estiver vivo então ele tocará a musica
+if(vivo == true && !audio_is_playing(snd_music))
+{
+    //Criando o sistema de musica do meu jogo
+    audio_play_sound(snd_music, 1, true)
+}
+//Criando um else if para caso meu esteja morte
+//se meu vivo for false ou seja quando eu estiver morto
+else if(vivo == false)
+{
+    //Se eu morri então a musica vai parar
+    audio_stop_sound(snd_music)
 }

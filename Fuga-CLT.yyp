@@ -59,6 +59,8 @@
     {"id":{"name":"o_player","path":"objects/o_player/o_player.yy",},},
     {"id":{"name":"rm_jogo","path":"rooms/rm_jogo/rm_jogo.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"snd_jump","path":"sounds/snd_jump/snd_jump.yy",},},
+    {"id":{"name":"snd_music","path":"sounds/snd_music/snd_music.yy",},},
     {"id":{"name":"s_background","path":"sprites/s_background/s_background.yy",},},
     {"id":{"name":"s_cafe","path":"sprites/s_cafe/s_cafe.yy",},},
     {"id":{"name":"s_caixa","path":"sprites/s_caixa/s_caixa.yy",},},
