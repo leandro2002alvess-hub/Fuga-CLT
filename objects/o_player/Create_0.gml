@@ -21,4 +21,4 @@ tempo_morte_limite = 60
 //Criando um sistema para mover meu Background
 //O layer_get_id irá pegar o nome do ID que tenho guardado na minha layer
 layer_id = layer_get_id("Background")
-layer_hspeed(layer_id, -4);
+layer_hspeed(layer_id, -global.velh);
