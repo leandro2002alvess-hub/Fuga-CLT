@@ -20,3 +20,16 @@ if(pontos >= recorde && o_player.vivo == false)
 {
     recorde = pontos
 }
+
+// Criando um if para definir quando eu irei aumentar a minha velocidade dentro do jogo
+if(pontos >= proxima_meta)
+{
+    // Aumenta a velocidade do jogo inteiro de uma vez só!
+    global.velh += 0.3;
+    
+    // Mostra no console o novo valor correto
+    show_debug_message("Velocidade Global subiu para: " + string(global.velh));
+    
+    // Avança a meta (mudei para 100 de novo para manter seu plano inicial de "a cada 100")
+    proxima_meta += 100; 
+}

@@ -3,7 +3,7 @@
 
 //Criando o sistema de movimentos da caixa
 //Fazendo o meu X da room pegar a variavel vel_h
-x -= vel_h
+x -= global.velh
 //Com base no meu da room ele irá negativar o valor, fazendo com que
 //meu velh seja um -velh e fazendo o movimento ser para esquerda
 
@@ -15,6 +15,6 @@ if(x < -32)
     //Usando uma instancia para destruir meu objeto
     instance_destroy()
     //Debugando para ver se a destruição ocorreu
-    show_debug_message("Destruindo meu objeto")
+    //show_debug_message("Destruindo meu objeto")
 }
 

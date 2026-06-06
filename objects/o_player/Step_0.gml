@@ -8,7 +8,7 @@ var space = keyboard_check_pressed(vk_space)
 //Criando o sistema de gravidade do nosso jogo
 //nosso vel_v por padrão não possui nenhum tipo de valor ou seja zero
 //Porém ele vai receber o valor da grav ou seja vel_v += a minha grav que equivale a 0.5
-show_debug_message("Minha velocidade vertical e: " + string(vel_v));
+//show_debug_message("Minha velocidade vertical e: " + string(vel_v));
 vel_v += grav
 //Criando meu if para ver se estou pulando ou não
 if(vivo == true && space && place_meeting(x, y + 1, o_chao))
@@ -20,7 +20,7 @@ if(vivo == true && space && place_meeting(x, y + 1, o_chao))
     //ao -pulo que se refere a altura que irei pular no negativo indo assim para cima
     vel_v = -pulo
     //Debugando para ver se funcionou
-    show_debug_message("Apertei espaço")
+    //show_debug_message("Apertei espaço")
     //Para evitar que estou pulando de forma infinita iremos usar um place_meeting
     //que consiste em verificar se estou batendo em algum objeto abaixo de mim
     
@@ -60,32 +60,7 @@ if(place_meeting(x + 1, y + 1, o_caixa))
     //Se eu colidi com a caixa então ele rodará a sprite
     sprite_index = s_player_dead
     //Criando um reset da variavel
-    o_caixa.vel_h = 0
-    o_pa.vel_h = 0
-    o_pa_1.vel_h = 0
-    // Proteção para o NPC 2
-    if (instance_exists(o_npc2)) 
-    {
-        o_npc2.vel_h = 0;
-    }
-    
-    // Proteção para o NPC 1
-    if (instance_exists(o_npc1)) 
-    {
-        o_npc1.vel_h = 0;
-    }
-    
-    // Proteção para o NPC 3
-    if (instance_exists(o_npc3)) 
-    {
-        o_npc3.vel_h = 0;
-    }
-    
-    // Proteção para o NPC 4
-    if (instance_exists(o_npc4)) 
-    {
-        o_npc4.vel_h = 0;
-    }
+    global.velh = 0;
     //esse que guarda o nome Background
     var layer_id = layer_get_id("Background");
     //Por iremos passar dois parametros dentro do layer_background_speed
@@ -102,9 +77,10 @@ if(place_meeting(x + 1, y + 1, o_caixa))
     if(tempo_morte >= tempo_morte_limite) 
     {
         //Então minha room será reiniciada 
-        show_debug_message(tempo_morte)
+        //show_debug_message(tempo_morte)
         o_controlador.pontos = 0
         room_restart()
+        global.velh = 4;
     }
         
 }

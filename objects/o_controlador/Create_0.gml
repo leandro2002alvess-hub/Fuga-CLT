@@ -10,3 +10,6 @@ tempo_pontos_limite = 5
 
 //Criando uma variavel recorde
 recorde = 0
+
+//Criando metas para aumentar a velocidade
+proxima_meta = 100;
