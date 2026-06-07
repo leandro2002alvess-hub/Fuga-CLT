@@ -22,3 +22,6 @@ tempo_morte_limite = 60
 //O layer_get_id irá pegar o nome do ID que tenho guardado na minha layer
 layer_id = layer_get_id("Background")
 layer_hspeed(layer_id, -global.velh);
+
+//Criando o sistema de musica do meu jogo
+audio_play_sound(snd_music, 1, true )

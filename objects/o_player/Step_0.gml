@@ -89,8 +89,7 @@ if(place_meeting(x + 1, y + 1, o_caixa))
 //Se eu estiver vivo então ele tocará a musica
 if(vivo == true && !audio_is_playing(snd_music))
 {
-    //Criando o sistema de musica do meu jogo
-    audio_play_sound(snd_music, 1, true)
+    
 }
 //Criando um else if para caso meu esteja morte
 //se meu vivo for false ou seja quando eu estiver morto
